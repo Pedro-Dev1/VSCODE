@@ -1,0 +1,7 @@
+{
+  "/painel/page": "app/painel/page.js",
+  "/page": "app/page.js",
+  "/producao/page": "app/producao/page.js",
+  "/maquinas/page": "app/maquinas/page.js",
+  "/gerenciamento/page": "app/gerenciamento/page.js"
+}

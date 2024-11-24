@@ -1,0 +1,16 @@
+/* Importações do Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globais adicionais */
+body {
+  @apply bg-gray-100 text-gray-900;
+}
+
+/* Exemplo de classe personalizada */
+@layer components {
+  .border-border {
+    @apply border-2 border-gray-300;
+  }
+}
