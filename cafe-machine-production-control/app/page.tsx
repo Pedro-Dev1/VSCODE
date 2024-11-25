@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -22,6 +23,7 @@ interface Maquina {
 export default function Home() {
   const [novaMaquina, setNovaMaquina] = useState<Partial<Maquina>>({})
   const { toast } = useToast()
+  const router = useRouter()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -51,6 +53,7 @@ export default function Home() {
     })
 
     setNovaMaquina({})
+    router.push('/painel')
   }
 
   return (
@@ -70,6 +73,7 @@ export default function Home() {
                     id="nomeCliente"
                     value={novaMaquina.nomeCliente || ''}
                     onChange={(e) => setNovaMaquina({ ...novaMaquina, nomeCliente: e.target.value })}
+                    required
                   />
                 </div>
                 <div className="space-y-2">
@@ -78,6 +82,7 @@ export default function Home() {
                     id="modelo"
                     value={novaMaquina.modelo || ''}
                     onChange={(e) => setNovaMaquina({ ...novaMaquina, modelo: e.target.value })}
+                    required
                   />
                 </div>
                 <div className="space-y-2">
@@ -94,6 +99,7 @@ export default function Home() {
                     id="numeroSerie"
                     value={novaMaquina.numeroSerie || ''}
                     onChange={(e) => setNovaMaquina({ ...novaMaquina, numeroSerie: e.target.value })}
+                    required
                   />
                 </div>
                 <div className="space-y-2">

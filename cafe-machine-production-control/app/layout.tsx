@@ -1,9 +1,3 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-import { AuthProvider } from './contexts/AuthContext'
-
-const inter = Inter({ subsets: ['latin'] })
-
 export default function RootLayout({
   children,
 }: {
@@ -11,9 +5,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>
-        <AuthProvider>{children}</AuthProvider>
-      </body>
+      <body>{children}</body>
     </html>
   )
+}
+
+export const metadata = {
+  title: 'Sistema de Controle de Produção',
+  description: 'Sistema para gerenciamento de máquinas e produção',
 }
